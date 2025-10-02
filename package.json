@@ -14,7 +14,7 @@
       "subtitle": "Remote Desktop Protocol",
       "arguments": [
         {
-          "name": "address",
+          "name": "server",
           "type": "text",
           "placeholder": "Enter the address of the remote machine",
           "required": true
