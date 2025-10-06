@@ -27,7 +27,7 @@ export default async function main(props: LaunchProps) {
       break;
     case "darwin":
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      exec(`open rdp://full%20address=s:${server}`, async (error: any, stdout: any, stderr: any) => {
+      exec(`open rdp://${server}`, async (error: any, stdout: any, stderr: any) => {
         if (error) {
           console.error(`exec error: ${error}`);
           await showHUD(`Error starting RDP session: ${error.message}`);
