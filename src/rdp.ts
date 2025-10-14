@@ -8,7 +8,7 @@ export default async function main(props: LaunchProps) {
     return;
   }
 
-  await showHUD(`Starting RDP session to ${server}`);
+  showHUD(`Starting RDP session to ${server}`);
 
   //check os and run appropriate command
   const os = process.platform;
