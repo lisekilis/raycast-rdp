@@ -14,11 +14,10 @@ export default async function main(props: LaunchProps) {
   const os = process.platform;
   switch (os) {
     case "win32":
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      exec(`mstsc /v:${server}`, async (error: any, stdout: any, stderr: any) => {
+      exec(`mstsc /v:${server}`, async (error: Error | null, stdout: string, stderr: string) => {
         if (error) {
           console.error(`exec error: ${error}`);
-          await showHUD(`Error starting RDP session: ${error.message}`);
+          showHUD(`Error starting RDP session: ${error.message}`);
           return;
         }
         console.log(`stdout: ${stdout}`);
@@ -26,11 +25,10 @@ export default async function main(props: LaunchProps) {
       });
       break;
     case "darwin":
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      exec(`open rdp://${server}`, async (error: any, stdout: any, stderr: any) => {
+      exec(`open rdp://${server}`, async (error: Error | null, stdout: string, stderr: string) => {
         if (error) {
           console.error(`exec error: ${error}`);
-          await showHUD(`Error starting RDP session: ${error.message}`);
+          showHUD(`Error starting RDP session: ${error.message}`);
           return;
         }
         console.log(`stdout: ${stdout}`);

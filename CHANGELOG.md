@@ -1,5 +1,5 @@
 # RDP Changelog
 
-## [Initial release] - 2025-10-14
+## [Initial release] - {PR_MERGE_DATE}
 
 Initial version code
